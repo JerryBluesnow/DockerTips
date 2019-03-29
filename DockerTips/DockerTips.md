@@ -178,3 +178,72 @@
 
 
  docker commit -m="new Linux system with gcc g++ ping openssl make vim installed" 49efe8bedaf4 jerry4docker/jerryubuntu:first
+
+
+
+ ### ISSUE: fatal error: Python.h: No such file or directory
+    refer to https://stackoverflow.com/questions/21530577/fatal-error-python-h-no-such-file-or-directory
+
+    should :
+    apt-get install python-dev   # for python2.x installs
+    apt-get install python3-dev  # for python3.x installs
+
+
+### pip install Scrapy in ubuntu
+    
+    first need to
+                |
+                +---apt-get install python-dev
+
+
+# docker images 存在哪里
+[refer link](https://codeday.me/bug/20180702/187031.html)
+    docker-machine ssh default
+    sudo -i
+    [docker在本地如何管理image?](https://segmentfault.com/a/1190000009730986)
+    [Docker 基础 : 镜像](https://www.cnblogs.com/sparkdev/p/8901728.html)
+    [docker 在本地如何管理 image（镜像）?](https://www.yangcs.net/posts/how-manage-image/)
+    root@default:/mnt/sda1/var/lib/docker/aufs/diff# du -sh * |sort -u
+    12.0K   1045a6c132a3c7c772d1249612a9eb3710309fc44981e4fa5eb0afa523d16b8a
+    12.0K   1f90896d958f90bf56443c5f35e8029159d051a040c2024274bf06e9bb176779
+    12.0K   9110403b0b36b8d46a9b1ab9551cc823f5af555b5c29a8f624094989c49cbfa8
+    12.0K   93ce86261a50fbbdde18e62c77c2ea92b27ffe18ec9d39bcebc78890c82c2a9d
+    12.0K   96791cf1bed61de162550b6d61fac66e482777bd74c8796ffc43cde92203bddc
+    12.0K   9a890f602c6fef85808606e1c44a1d52bec724f1b1a2f0e5763fdf79c3f5e9d9
+    12.0K   afaf538676bc1ccde353907cddccfbd3e6dd2d5253af008f09d6bf1cd14b42e9
+    12.0K   c38a1c47b1db32e963dc8cd32d6e4adc5404c997e02eeecd65c215fcf0dc075f
+    12.0K   c9363caa1ef5950676b622e4ffcaaf0dfe0c91c838eff54b9537cb99759ae7b6
+    12.0K   d1d04edab127cb6560d4ce4d4f8729ee81dc550eb5507c6cfb70cb65ca1527a6
+    12.0K   d8905e9e7cdf964cb81275fea480935b4398ab2f45f31c2da75c5346d0f3fc23
+    16.0K   1d394326c880d6a64695bd8da310456746d3907240139331a1f0c6613d296c36
+    2.2G    7dd6d3b8d9c689669feddf9d19d86760c6dbbb9cfaba300789ddfbbb8b69b8b6
+    20.0K   1045a6c132a3c7c772d1249612a9eb3710309fc44981e4fa5eb0afa523d16b8a-init
+    20.0K   195fa28d0fd61fdea9e485eab829a5cf7c0260490dca8ae2a5e510e970865215-init
+    20.0K   1f90896d958f90bf56443c5f35e8029159d051a040c2024274bf06e9bb176779-init
+    20.0K   21d6c1a2a84792725672bff3ee029c97bce5be55844482da0fba911f1fc5c6bd-init
+    20.0K   2979024fa7445b60530c5287a23c8284feae6c93489a0269687f7d52cc6997a9
+    20.0K   7dd6d3b8d9c689669feddf9d19d86760c6dbbb9cfaba300789ddfbbb8b69b8b6-init
+    20.0K   7fe13d948129ddd99fe277668375e469c80d19799a743fec845b0ec224cd52f2
+    20.0K   7fe13d948129ddd99fe277668375e469c80d19799a743fec845b0ec224cd52f2-init
+    20.0K   879bd53104f11eb89ecc165d53b4c986ffa3718de66748a417032e1c1185deb9-init
+    20.0K   9110403b0b36b8d46a9b1ab9551cc823f5af555b5c29a8f624094989c49cbfa8-init
+    20.0K   93ce86261a50fbbdde18e62c77c2ea92b27ffe18ec9d39bcebc78890c82c2a9d-init
+    20.0K   96791cf1bed61de162550b6d61fac66e482777bd74c8796ffc43cde92203bddc-init
+    20.0K   9a890f602c6fef85808606e1c44a1d52bec724f1b1a2f0e5763fdf79c3f5e9d9-init
+    20.0K   a9fe1c0b58de5979317d4a75a13ce4da9b36b0b663b5209d0c75028489c01142-init
+    20.0K   afaf538676bc1ccde353907cddccfbd3e6dd2d5253af008f09d6bf1cd14b42e9-init
+    20.0K   c38a1c47b1db32e963dc8cd32d6e4adc5404c997e02eeecd65c215fcf0dc075f-init
+    20.0K   c9363caa1ef5950676b622e4ffcaaf0dfe0c91c838eff54b9537cb99759ae7b6-init
+    20.0K   d8905e9e7cdf964cb81275fea480935b4398ab2f45f31c2da75c5346d0f3fc23-init
+    20.0K   d958016803dc5454236a8a3da2a91d6f5beb6578b655ca8256e975f8b9131bba-init
+    22.8M   21d6c1a2a84792725672bff3ee029c97bce5be55844482da0fba911f1fc5c6bd
+    22.8M   a9fe1c0b58de5979317d4a75a13ce4da9b36b0b663b5209d0c75028489c01142
+    22.8M   d958016803dc5454236a8a3da2a91d6f5beb6578b655ca8256e975f8b9131bba
+    36.0K   195fa28d0fd61fdea9e485eab829a5cf7c0260490dca8ae2a5e510e970865215
+    36.0K   d1d04edab127cb6560d4ce4d4f8729ee81dc550eb5507c6cfb70cb65ca1527a6-init
+    44.0K   879bd53104f11eb89ecc165d53b4c986ffa3718de66748a417032e1c1185deb9
+    687.3M  7c9c410d059ff592916886bc896a4d863d2da55089040f18bda5d98e58428dd5
+    8.0K    f3f0204ada780e84f4af4c48a385abf91640dd6ffc84616658760214d6d1989a
+    84.0K   c219ae9f6e266ab4acb6933baef03d7bb9ed5fce69a5f8d0667fcef356bbb3b3
+    90.3M   0b6f00737d55323c93e97392d6b3a7cd5bc39fc2eda7d9638fadd20e70a729e4
+    root@default:/mnt/sda1/var/lib/docker/aufs/diff#
