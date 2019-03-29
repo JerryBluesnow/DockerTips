@@ -247,3 +247,5 @@
     84.0K   c219ae9f6e266ab4acb6933baef03d7bb9ed5fce69a5f8d0667fcef356bbb3b3
     90.3M   0b6f00737d55323c93e97392d6b3a7cd5bc39fc2eda7d9638fadd20e70a729e4
     root@default:/mnt/sda1/var/lib/docker/aufs/diff#
+
+# [docker中，如何将镜像保存为tar文件或者将镜像保存为文件，将tar文件导入到docker中](https://www.cnblogs.com/chuanzhang053/p/10084156.html)
